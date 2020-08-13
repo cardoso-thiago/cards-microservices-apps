@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "d0bf3e4a-cca1-4256-a772-5ed0ad9a5373",
 		"name": "Mastertech",
+		"description": "# Introdução\nAPI para o sistema de cartões\n\n# Overview\nSistema de testes criado no curso da Mastertech",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -10,6 +11,34 @@
 			"request": {
 				"method": "GET",
 				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Cliente Error Validation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "http://localhost:8081/cliente",
 					"protocol": "http",
@@ -47,6 +76,46 @@
 					"port": "8081",
 					"path": [
 						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cliente por ID Wrong Validation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/cliente/X",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"cliente",
+						"X"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cliente por ID Not Exists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/cliente/123456789",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"cliente",
+						"123456789"
 					]
 				}
 			},
@@ -92,6 +161,48 @@
 			"response": []
 		},
 		{
+			"name": "Get Cartão By Id Wrong Validation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cartao/id/X",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cartao",
+						"id",
+						"X"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cartão By Id Not Exists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cartao/id/123456",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cartao",
+						"id",
+						"123456"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Cartão By Id",
 			"request": {
 				"method": "GET",
@@ -114,6 +225,55 @@
 		},
 		{
 			"name": "Post Cartao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"numero\": \"112358132134\",\n    \"clienteId\": 3\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cartao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cartao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cartão By Id Created",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cartao/id/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cartao",
+						"id",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Cartao Error Duplicado",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -198,6 +358,26 @@
 			"response": []
 		},
 		{
+			"name": "Get Cartao By Numero Not Exists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cartao/123456789101212",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cartao",
+						"123456789101212"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Cartao By Numero",
 			"request": {
 				"method": "GET",
@@ -212,6 +392,62 @@
 					"path": [
 						"cartao",
 						"112358132134"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Pagamento Wrong Validations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cartao_id\": 3,\n    \"descricao\": \"\",\n    \"valor\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/pagamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"pagamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Pagamento Card Not Exists",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cartao_id\": 123456,\n    \"descricao\": \"Compra de Cerveja\",\n    \"valor\": 10.5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/pagamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"pagamento"
 					]
 				}
 			},
@@ -246,6 +482,69 @@
 			"response": []
 		},
 		{
+			"name": "Get Fatura Wrong Validation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/fatura/X/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"fatura",
+						"X",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Fatura Cliente Not Exists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/fatura/123456/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"fatura",
+						"123456",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Fatura Cartao Not Exists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/fatura/3/123456",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"fatura",
+						"3",
+						"123456"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Fatura",
 			"request": {
 				"method": "GET",
@@ -261,6 +560,72 @@
 						"fatura",
 						"3",
 						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagar Fatura Wrong Validation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/fatura/X/3/pagar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"fatura",
+						"X",
+						"3",
+						"pagar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagar Fatura Cliente Not Exists",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/fatura/123456/3/pagar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"fatura",
+						"123456",
+						"3",
+						"pagar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagar Fatura Cartao Not Exists",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/fatura/3/123456/pagar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"fatura",
+						"3",
+						"123456",
+						"pagar"
 					]
 				}
 			},
@@ -289,7 +654,73 @@
 			"response": []
 		},
 		{
-			"name": "Expirar Fatura",
+			"name": "Expirar Cartao Wrong Validation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/fatura/X/3/expirar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"fatura",
+						"X",
+						"3",
+						"expirar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Expirar Cartao Cliente Not Exists",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/fatura/123456/3/expirar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"fatura",
+						"123456",
+						"3",
+						"expirar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Expirar Cartao Cartao Not Exists",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/fatura/3/123456/expirar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"fatura",
+						"3",
+						"123456",
+						"expirar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Expirar Cartao",
 			"request": {
 				"method": "POST",
 				"header": [],

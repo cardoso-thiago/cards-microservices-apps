@@ -34,7 +34,7 @@ public class InvoiceController {
                                      @Min(value = 1, message = "O id do cartão deve ser um número positivo.")
                                      @PathVariable("cartao-id") Long cardId) {
         List<Payment> payments = invoiceService.getInvoice(customerId, cardId);
-        return payments.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(payments);
+        return payments == null || payments.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(payments);
     }
 
     @PostMapping("/{cliente-id}/{cartao-id}/pagar")

@@ -44,9 +44,11 @@ public class CardService {
     }
 
     public Card expireCard(Long customerId, Long cardId) throws CardNotFoundException {
-        customerClient.getCustomer(customerId);
-        Card card = cardRepository.findById(cardId).orElseThrow(() ->
-                new CardNotFoundException(MessageFormat.format("O cartão com o id {0} não foi encontrado.", cardId)));
+        //Chama antes para validar somente o cliente
+        Customer customer = customerClient.getCustomer(customerId);
+        Card card = cardRepository.findByIdAndCustomerId(cardId, customerId).orElseThrow(() ->
+                new CardNotFoundException(MessageFormat.format("O cartão {0} não foi encontrado para o cliente {1}.",
+                        cardId, customer.getName())));
         card.setExpired(Boolean.TRUE);
         return cardRepository.save(card);
     }
@@ -65,6 +67,10 @@ public class CardService {
     }
 
     public Card findByIdAndCostumerId(Long cardId, Long costumerId) throws CardNotFoundException {
-        return cardRepository.findByIdAndCustomerId(cardId, costumerId).orElseThrow(() -> new CardNotFoundException("O cartão não foi encontrado"));
+        //Chama antes para validar somente o cliente
+        Customer customer = customerClient.getCustomer(costumerId);
+        return cardRepository.findByIdAndCustomerId(cardId, costumerId).orElseThrow(() ->
+                new CardNotFoundException(MessageFormat.format("O cartão {0} não foi encontrado para o cliente {1}.",
+                        cardId, customer.getName())));
     }
 }
