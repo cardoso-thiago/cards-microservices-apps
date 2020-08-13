@@ -3,7 +3,6 @@ package br.com.mastertech.card.entity;
 import br.com.mastertech.card.entity.builder.CardBuilder;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "card")

@@ -18,9 +18,12 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import javax.validation.ConstraintViolationException;
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @ControllerAdvice
@@ -56,9 +59,18 @@ public class RestExceptionHandler {
         return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(createErrorBody(e.getCause().getMessage()));
     }
 
-    @ExceptionHandler(value = {FeignException.NotFound.class})
-    protected ResponseEntity<Object> handleFeignExceptionNotFound(FeignException.NotFound e) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getLocalizedMessage());
+    @ExceptionHandler(value = {FeignException.class})
+    protected ResponseEntity<Object> handleFeignException(FeignException e) {
+        return ResponseEntity.status(e.status()).body(getFeignError(e));
+    }
+
+    private String getFeignError(FeignException e) {
+        String error = e.getLocalizedMessage();
+        Optional<ByteBuffer> body = e.responseBody();
+        if(body.isPresent()) {
+            error = StandardCharsets.UTF_8.decode(body.get()).toString();
+        }
+        return error;
     }
 
     private Object createErrorBody(String error) {

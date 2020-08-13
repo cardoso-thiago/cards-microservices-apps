@@ -1,6 +1,9 @@
 package br.com.mastertech.invoice.service;
 
-import br.com.mastertech.invoice.client.*;
+import br.com.mastertech.invoice.client.Card;
+import br.com.mastertech.invoice.client.CardClient;
+import br.com.mastertech.invoice.client.Payment;
+import br.com.mastertech.invoice.client.PaymentClient;
 import br.com.mastertech.invoice.entity.Invoice;
 import br.com.mastertech.invoice.entity.builder.InvoiceBuilder;
 import br.com.mastertech.invoice.repository.InvoiceRepository;
@@ -13,13 +16,11 @@ import java.util.List;
 public class InvoiceService {
 
     private final CardClient cardClient;
-    private final CustomerClient customerClient;
     private final PaymentClient paymentClient;
     private final InvoiceRepository invoiceRepository;
 
-    public InvoiceService(CardClient cardClient, CustomerClient customerClient, PaymentClient paymentClient, InvoiceRepository invoiceRepository) {
+    public InvoiceService(CardClient cardClient, PaymentClient paymentClient, InvoiceRepository invoiceRepository) {
         this.cardClient = cardClient;
-        this.customerClient = customerClient;
         this.paymentClient = paymentClient;
         this.invoiceRepository = invoiceRepository;
     }

@@ -1,7 +1,6 @@
 package br.com.mastertech.card.dto;
 
 import br.com.mastertech.card.dto.builder.CardInfoResponseBuilder;
-import br.com.mastertech.card.dto.builder.CardRequestBuilder;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.Min;
