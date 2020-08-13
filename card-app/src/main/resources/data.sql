@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS card CASCADE;
+
+CREATE TABLE card (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    number VARCHAR(12) NOT NULL UNIQUE,
+    active BOOL NOT NULL DEFAULT FALSE,
+    expired BOOL NOT NULL DEFAULT FALSE,
+    customer_id INT NOT NULL
+);
+
+INSERT INTO card (number, customer_id) VALUES
+('123456789', 1),
+('987654321', 2);
