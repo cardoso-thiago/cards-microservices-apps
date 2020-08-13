@@ -1,0 +1,50 @@
+version: '3.8'
+services:
+  cards-eureka-server:
+    build: cards-eureka-server
+    ports:
+      - "8761:8761"
+  card-app:
+    build: card-app
+    container_name: card-app
+    ports:
+      - "8080:8080"
+    environment:
+      server.port: 8080
+      eureka.client.enabled: 'true'
+      eureka.host: cards-eureka-server
+      eureka.instance.preferIpAddress: 'true'
+      eureka.client.serviceUrl.defaultZone: http://cards-eureka-server:8761/eureka/
+  customer-app:
+    build: customer-app
+    container_name: customer-app
+    ports:
+      - "8081:8081"
+    environment:
+      server.port: 8081
+      eureka.client.enabled: 'true'
+      eureka.host: cards-eureka-server
+      eureka.instance.preferIpAddress: 'true'
+      eureka.client.serviceUrl.defaultZone: http://cards-eureka-server:8761/eureka/
+  invoice-app:
+    build: invoice-app
+    container_name: invoice-app
+    ports:
+      - "8083:8083"
+    environment:
+      server.port: 8083
+      eureka.client.enabled: 'true'
+      eureka.host: cards-eureka-server
+      eureka.instance.preferIpAddress: 'true'
+      eureka.client.serviceUrl.defaultZone: http://cards-eureka-server:8761/eureka/
+  payment-app:
+    build: payment-app
+    container_name: payment-app
+    ports:
+      - "8082:8082"
+    environment:
+      server.port: 8082
+      eureka.client.enabled: 'true'
+      eureka.host: cards-eureka-server
+      eureka.instance.preferIpAddress: 'true'
+      eureka.client.serviceUrl.defaultZone: http://cards-eureka-server:8761/eureka/
