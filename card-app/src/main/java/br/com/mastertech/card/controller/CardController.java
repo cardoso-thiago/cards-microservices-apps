@@ -82,7 +82,7 @@ public class CardController {
             @NotNull(message = "O id do cliente não pode ser nulo.")
             @Min(value = 1, message = "O id do cliente deve ser um número positivo.")
             @PathVariable("customer-id") Long customerId) throws CardNotFoundException {
-        Card card = cardService.findByIdAndCostumerId(cardId, customerId);
+        Card card = cardService.findByIdAndCustomerId(cardId, customerId);
         return ResponseEntity.ok().body(DataMapper.INSTANCE.cardToCardInfoResponse(card));
     }
 

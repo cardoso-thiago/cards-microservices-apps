@@ -6,6 +6,8 @@ import br.com.mastertech.card.entity.Card;
 import br.com.mastertech.card.exception.CardAlreadyExistsException;
 import br.com.mastertech.card.exception.CardNotFoundException;
 import br.com.mastertech.card.repository.CardRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.text.MessageFormat;
@@ -17,6 +19,7 @@ import java.util.stream.StreamSupport;
 public class CardService {
     private final CardRepository cardRepository;
     private final CustomerClient customerClient;
+    private final Logger log = LoggerFactory.getLogger(CardService.class);
 
     public CardService(CardRepository cardRepository, CustomerClient customerClient) {
         this.cardRepository = cardRepository;
@@ -66,10 +69,12 @@ public class CardService {
         return cardRepository.findById(cardId).orElseThrow(() -> new CardNotFoundException("O cartão não foi encontrado"));
     }
 
-    public Card findByIdAndCostumerId(Long cardId, Long costumerId) throws CardNotFoundException {
+    public Card findByIdAndCustomerId(Long cardId, Long customerId) throws CardNotFoundException {
+        log.info(MessageFormat.format("Vai buscar o cartão com o id {0} do cliente id {1}",
+                cardId, customerId));
         //Chama antes para validar somente o cliente
-        Customer customer = customerClient.getCustomer(costumerId);
-        return cardRepository.findByIdAndCustomerId(cardId, costumerId).orElseThrow(() ->
+        Customer customer = customerClient.getCustomer(customerId);
+        return cardRepository.findByIdAndCustomerId(cardId, customerId).orElseThrow(() ->
                 new CardNotFoundException(MessageFormat.format("O cartão {0} não foi encontrado para o cliente {1}.",
                         cardId, customer.getName())));
     }
