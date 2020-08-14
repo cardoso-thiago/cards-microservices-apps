@@ -16,6 +16,7 @@ headingLevel: 2
 
 <h1 id="mastertech">Mastertech v1.0</h1>
 
+
 # Introdução
 API para o sistema de cartões
 
@@ -34,9 +35,9 @@ Base URLs:
 
 <h1 id="mastertech-misc">Misc</h1>
 
-## Get All Clientes
+## Get All Customers
 
-<a id="opIdGetAllClientes"></a>
+<a id="opIdGetAllCustomers"></a>
 
 > Code samples
 
@@ -48,7 +49,9 @@ Host: localhost:8081
 
 `GET /cliente`
 
-<h3 id="get-all-clientes-responses">Responses</h3>
+Request para obter todos os clientes.
+
+<h3 id="get-all-customers-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -58,9 +61,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Post Cliente Error Validation
+## Post Customer Wrong Validation
 
-<a id="opIdPostClienteErrorValidation"></a>
+<a id="opIdPostCustomerWrongValidation"></a>
 
 > Code samples
 
@@ -73,6 +76,8 @@ Content-Type: application/json
 
 `POST /cliente`
 
+Request para criar um novo cliente, deve dar erro de validação do campo.
+
 > Body parameter
 
 ```json
@@ -81,13 +86,13 @@ Content-Type: application/json
 }
 ```
 
-<h3 id="post-cliente-error-validation-parameters">Parameters</h3>
+<h3 id="post-customer-wrong-validation-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[PostClienteErrorValidationRequest](#schemapostclienteerrorvalidationrequest)|true|none|
+|body|body|[PostCustomerWrongValidationRequest](#schemapostcustomerwrongvalidationrequest)|true|none|
 
-<h3 id="post-cliente-error-validation-responses">Responses</h3>
+<h3 id="post-customer-wrong-validation-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -97,9 +102,9 @@ Content-Type: application/json
 This operation does not require authentication
 </aside>
 
-## Get Cliente por ID Wrong Validation
+## Get Customer by id Wrong Validation
 
-<a id="opIdGetClienteporIDWrongValidation"></a>
+<a id="opIdGetCustomerbyidWrongValidation"></a>
 
 > Code samples
 
@@ -111,7 +116,9 @@ Host: localhost:8081
 
 `GET /cliente/X`
 
-<h3 id="get-cliente-por-id-wrong-validation-responses">Responses</h3>
+Request para obter um cliente pelo id, deve dar erro de validação do campo.
+
+<h3 id="get-customer-by-id-wrong-validation-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -121,9 +128,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Get Cliente por ID Not Exists
+## Get Customer by id Not Exists
 
-<a id="opIdGetClienteporIDNotExists"></a>
+<a id="opIdGetCustomerbyidNotExists"></a>
 
 > Code samples
 
@@ -135,7 +142,9 @@ Host: localhost:8081
 
 `GET /cliente/123456789`
 
-<h3 id="get-cliente-por-id-not-exists-responses">Responses</h3>
+Request para obter um cliente que não existe. Deve retornar mensagem informativa.
+
+<h3 id="get-customer-by-id-not-exists-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -145,9 +154,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Get Cliente por ID
+## Get Customer by id
 
-<a id="opIdGetClienteporID"></a>
+<a id="opIdGetCustomerbyid"></a>
 
 > Code samples
 
@@ -159,7 +168,9 @@ Host: localhost:8081
 
 `GET /cliente/3`
 
-<h3 id="get-cliente-por-id-responses">Responses</h3>
+Request para obter um cliente por id.
+
+<h3 id="get-customer-by-id-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -169,9 +180,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Get All Cartoes
+## Get All Cards
 
-<a id="opIdGetAllCartoes"></a>
+<a id="opIdGetAllCards"></a>
 
 > Code samples
 
@@ -183,7 +194,9 @@ Host: localhost:8081
 
 `GET /cartao`
 
-<h3 id="get-all-cartoes-responses">Responses</h3>
+Request para obter todos os cartões cadastrados.
+
+<h3 id="get-all-cards-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -193,9 +206,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Post Cartao
+## Post Card
 
-<a id="opIdPostCartao"></a>
+<a id="opIdPostCard"></a>
 
 > Code samples
 
@@ -208,6 +221,8 @@ Content-Type: application/json
 
 `POST /cartao`
 
+Request para criar um novo cartão associado a um cliente que existe.
+
 > Body parameter
 
 ```json
@@ -217,13 +232,13 @@ Content-Type: application/json
 }
 ```
 
-<h3 id="post-cartao-parameters">Parameters</h3>
+<h3 id="post-card-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[PostCartaoRequest](#schemapostcartaorequest)|true|none|
+|body|body|[PostCardRequest](#schemapostcardrequest)|true|none|
 
-<h3 id="post-cartao-responses">Responses</h3>
+<h3 id="post-card-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -233,9 +248,9 @@ Content-Type: application/json
 This operation does not require authentication
 </aside>
 
-## Get Cartão By Id Wrong Validation
+## Get Card by id  Wrong Validation
 
-<a id="opIdGetCartãoByIdWrongValidation"></a>
+<a id="opIdGetCardbyidWrongValidation"></a>
 
 > Code samples
 
@@ -247,7 +262,9 @@ Host: localhost:8081
 
 `GET /cartao/id/X`
 
-<h3 id="get-cartão-by-id-wrong-validation-responses">Responses</h3>
+Request para obter o cartão pelo id. Deve retornar erro de validação do campo.
+
+<h3 id="get-card-by-id--wrong-validation-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -257,9 +274,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Get Cartão By Id Not Exists
+## Get Card by id Not Exists
 
-<a id="opIdGetCartãoByIdNotExists"></a>
+<a id="opIdGetCardbyidNotExists"></a>
 
 > Code samples
 
@@ -271,7 +288,9 @@ Host: localhost:8081
 
 `GET /cartao/id/123456`
 
-<h3 id="get-cartão-by-id-not-exists-responses">Responses</h3>
+Request para obter o cartão pelo id. Deve retornar que o cartão não existe.
+
+<h3 id="get-card-by-id-not-exists-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -281,9 +300,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Get Cartão By Id
+## Get Card by id
 
-<a id="opIdGetCartãoById"></a>
+<a id="opIdGetCardbyid"></a>
 
 > Code samples
 
@@ -295,7 +314,9 @@ Host: localhost:8081
 
 `GET /cartao/id/1`
 
-<h3 id="get-cartão-by-id-responses">Responses</h3>
+Request para obter o cartão pelo id.
+
+<h3 id="get-card-by-id-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -305,9 +326,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Get Cartão By Id Created
+## Get Card by id Created
 
-<a id="opIdGetCartãoByIdCreated"></a>
+<a id="opIdGetCardbyidCreated"></a>
 
 > Code samples
 
@@ -319,7 +340,9 @@ Host: localhost:8081
 
 `GET /cartao/id/3`
 
-<h3 id="get-cartão-by-id-created-responses">Responses</h3>
+Request para obter o cartão pelo id recém criado.
+
+<h3 id="get-card-by-id-created-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -329,9 +352,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Post Pagamento Falha Desativado
+## Post Payment Deactivated Error
 
-<a id="opIdPostPagamentoFalhaDesativado"></a>
+<a id="opIdPostPaymentDeactivatedError"></a>
 
 > Code samples
 
@@ -344,6 +367,8 @@ Content-Type: application/json
 
 `POST /pagamento`
 
+Request para criar um pagamento no cartão. Deve retornar informando que o cartão está desativado.
+
 > Body parameter
 
 ```json
@@ -354,13 +379,13 @@ Content-Type: application/json
 }
 ```
 
-<h3 id="post-pagamento-falha-desativado-parameters">Parameters</h3>
+<h3 id="post-payment-deactivated-error-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[PostPagamentoFalhaDesativadoRequest](#schemapostpagamentofalhadesativadorequest)|true|none|
+|body|body|[PostPaymentDeactivatedErrorRequest](#schemapostpaymentdeactivatederrorrequest)|true|none|
 
-<h3 id="post-pagamento-falha-desativado-responses">Responses</h3>
+<h3 id="post-payment-deactivated-error-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -370,9 +395,9 @@ Content-Type: application/json
 This operation does not require authentication
 </aside>
 
-## Patch Ativa Cartao
+## Patch Card Activation
 
-<a id="opIdPatchAtivaCartao"></a>
+<a id="opIdPatchCardActivation"></a>
 
 > Code samples
 
@@ -385,6 +410,8 @@ Content-Type: application/json
 
 `PATCH /cartao/112358132134`
 
+Request para ativar um cartão.
+
 > Body parameter
 
 ```json
@@ -393,13 +420,13 @@ Content-Type: application/json
 }
 ```
 
-<h3 id="patch-ativa-cartao-parameters">Parameters</h3>
+<h3 id="patch-card-activation-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[PatchAtivaCartaoRequest](#schemapatchativacartaorequest)|true|none|
+|body|body|[PatchCardActivationRequest](#schemapatchcardactivationrequest)|true|none|
 
-<h3 id="patch-ativa-cartao-responses">Responses</h3>
+<h3 id="patch-card-activation-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -409,9 +436,9 @@ Content-Type: application/json
 This operation does not require authentication
 </aside>
 
-## Get Cartao By Numero
+## Get Card by number
 
-<a id="opIdGetCartaoByNumero"></a>
+<a id="opIdGetCardbynumber"></a>
 
 > Code samples
 
@@ -423,7 +450,9 @@ Host: localhost:8081
 
 `GET /cartao/112358132134`
 
-<h3 id="get-cartao-by-numero-responses">Responses</h3>
+Request para obter um cartão pelo número.
+
+<h3 id="get-card-by-number-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -433,9 +462,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Get Cartao By Numero Not Exists
+## Get Card by number Not Exists
 
-<a id="opIdGetCartaoByNumeroNotExists"></a>
+<a id="opIdGetCardbynumberNotExists"></a>
 
 > Code samples
 
@@ -447,7 +476,9 @@ Host: localhost:8081
 
 `GET /cartao/123456789101212`
 
-<h3 id="get-cartao-by-numero-not-exists-responses">Responses</h3>
+Request para obter um cartão pelo número. Deve retornar informando que o cartão não existe.
+
+<h3 id="get-card-by-number-not-exists-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -457,9 +488,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Get Fatura Wrong Validation
+## Get Invoice  Wrong Validation
 
-<a id="opIdGetFaturaWrongValidation"></a>
+<a id="opIdGetInvoiceWrongValidation"></a>
 
 > Code samples
 
@@ -471,7 +502,9 @@ Host: localhost:8081
 
 `GET /X/3`
 
-<h3 id="get-fatura-wrong-validation-responses">Responses</h3>
+Request para obter a fatura. Deve retornar erro de validação do campo.
+
+<h3 id="get-invoice--wrong-validation-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -481,9 +514,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Get Fatura Cliente Not Exists
+## Get Invoice Customer Not Exists
 
-<a id="opIdGetFaturaClienteNotExists"></a>
+<a id="opIdGetInvoiceCustomerNotExists"></a>
 
 > Code samples
 
@@ -495,7 +528,9 @@ Host: localhost:8081
 
 `GET /123456/3`
 
-<h3 id="get-fatura-cliente-not-exists-responses">Responses</h3>
+Request para obter a fatura. Deve retornar que o cliente não existe.
+
+<h3 id="get-invoice-customer-not-exists-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -505,9 +540,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Get Fatura Cartao Not Exists
+## Get Invoice Card Not Exists
 
-<a id="opIdGetFaturaCartaoNotExists"></a>
+<a id="opIdGetInvoiceCardNotExists"></a>
 
 > Code samples
 
@@ -519,7 +554,9 @@ Host: localhost:8081
 
 `GET /3/123456`
 
-<h3 id="get-fatura-cartao-not-exists-responses">Responses</h3>
+Request para obter a fatura. Deve retornar que o cartão não existe.
+
+<h3 id="get-invoice-card-not-exists-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -529,9 +566,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Get Fatura
+## Get Invoice
 
-<a id="opIdGetFatura"></a>
+<a id="opIdGetInvoice"></a>
 
 > Code samples
 
@@ -543,7 +580,9 @@ Host: localhost:8081
 
 `GET /3/3`
 
-<h3 id="get-fatura-responses">Responses</h3>
+Request para obter a fatura.
+
+<h3 id="get-invoice-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -553,9 +592,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Pagar Fatura Wrong Validation
+## Post Pay Invoice Wrong Validation
 
-<a id="opIdPagarFaturaWrongValidation"></a>
+<a id="opIdPostPayInvoiceWrongValidation"></a>
 
 > Code samples
 
@@ -567,7 +606,9 @@ Host: localhost:8081
 
 `POST /X/3/pagar`
 
-<h3 id="pagar-fatura-wrong-validation-responses">Responses</h3>
+Request para pagar a fatura. Deve retornar erro de validação do campo.
+
+<h3 id="post-pay-invoice-wrong-validation-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -577,9 +618,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Pagar Fatura Cliente Not Exists
+## Post Pay Invoice Customer Not Exists
 
-<a id="opIdPagarFaturaClienteNotExists"></a>
+<a id="opIdPostPayInvoiceCustomerNotExists"></a>
 
 > Code samples
 
@@ -591,7 +632,9 @@ Host: localhost:8081
 
 `POST /123456/3/pagar`
 
-<h3 id="pagar-fatura-cliente-not-exists-responses">Responses</h3>
+Request para pagar a fatura. Deve retornar informando que o cliente não existe.
+
+<h3 id="post-pay-invoice-customer-not-exists-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -601,9 +644,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Pagar Fatura Cartao Not Exists
+## Post Pay Invoice Card Not Exists
 
-<a id="opIdPagarFaturaCartaoNotExists"></a>
+<a id="opIdPostPayInvoiceCardNotExists"></a>
 
 > Code samples
 
@@ -615,7 +658,9 @@ Host: localhost:8081
 
 `POST /3/123456/pagar`
 
-<h3 id="pagar-fatura-cartao-not-exists-responses">Responses</h3>
+Request para pagar a fatura. Deve retornar informando que o cartão não existe.
+
+<h3 id="post-pay-invoice-card-not-exists-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -625,9 +670,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Pagar Fatura
+## Post Pay Invoice
 
-<a id="opIdPagarFatura"></a>
+<a id="opIdPostPayInvoice"></a>
 
 > Code samples
 
@@ -639,7 +684,9 @@ Host: localhost:8081
 
 `POST /3/3/pagar`
 
-<h3 id="pagar-fatura-responses">Responses</h3>
+Request para pagar a fatura.
+
+<h3 id="post-pay-invoice-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -649,9 +696,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Expirar Cartao Wrong Validation
+## Post Expire Card Wrong Validation
 
-<a id="opIdExpirarCartaoWrongValidation"></a>
+<a id="opIdPostExpireCardWrongValidation"></a>
 
 > Code samples
 
@@ -663,7 +710,9 @@ Host: localhost:8081
 
 `POST /X/3/expirar`
 
-<h3 id="expirar-cartao-wrong-validation-responses">Responses</h3>
+Request para expirar o cartão do cliente. Deve retornar erro de validação do campo.
+
+<h3 id="post-expire-card-wrong-validation-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -673,9 +722,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Expirar Cartao Cliente Not Exists
+## Post Expire Card Customer Not Exists
 
-<a id="opIdExpirarCartaoClienteNotExists"></a>
+<a id="opIdPostExpireCardCustomerNotExists"></a>
 
 > Code samples
 
@@ -687,7 +736,9 @@ Host: localhost:8081
 
 `POST /123456/3/expirar`
 
-<h3 id="expirar-cartao-cliente-not-exists-responses">Responses</h3>
+Request para expirar o cartão do cliente. Deve retornar que o cliente não existe.
+
+<h3 id="post-expire-card-customer-not-exists-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -697,9 +748,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Expirar Cartao Cartao Not Exists
+## Post Expire Card Not Exists
 
-<a id="opIdExpirarCartaoCartaoNotExists"></a>
+<a id="opIdPostExpireCardNotExists"></a>
 
 > Code samples
 
@@ -711,7 +762,9 @@ Host: localhost:8081
 
 `POST /3/123456/expirar`
 
-<h3 id="expirar-cartao-cartao-not-exists-responses">Responses</h3>
+Request para expirar o cartão do cliente. Deve retornar que o cartão não existe.
+
+<h3 id="post-expire-card-not-exists-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -721,9 +774,9 @@ Host: localhost:8081
 This operation does not require authentication
 </aside>
 
-## Expirar Cartao
+## Post Expire Card
 
-<a id="opIdExpirarCartao"></a>
+<a id="opIdPostExpireCard"></a>
 
 > Code samples
 
@@ -735,7 +788,9 @@ Host: localhost:8081
 
 `POST /3/3/expirar`
 
-<h3 id="expirar-cartao-responses">Responses</h3>
+Request para expirar o cartão do cliente.
+
+<h3 id="post-expire-card-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -747,12 +802,12 @@ This operation does not require authentication
 
 # Schemas
 
-<h2 id="tocS_PostClienteErrorValidationRequest">PostClienteErrorValidationRequest</h2>
+<h2 id="tocS_PostCustomerWrongValidationRequest">PostCustomerWrongValidationRequest</h2>
 <!-- backwards compatibility -->
-<a id="schemapostclienteerrorvalidationrequest"></a>
-<a id="schema_PostClienteErrorValidationRequest"></a>
-<a id="tocSpostclienteerrorvalidationrequest"></a>
-<a id="tocspostclienteerrorvalidationrequest"></a>
+<a id="schemapostcustomerwrongvalidationrequest"></a>
+<a id="schema_PostCustomerWrongValidationRequest"></a>
+<a id="tocSpostcustomerwrongvalidationrequest"></a>
+<a id="tocspostcustomerwrongvalidationrequest"></a>
 
 ```json
 {
@@ -761,7 +816,7 @@ This operation does not require authentication
 
 ```
 
-PostClienteErrorValidationRequest
+PostCustomerWrongValidationRequest
 
 ### Properties
 
@@ -769,12 +824,12 @@ PostClienteErrorValidationRequest
 |---|---|---|---|---|
 |nome|string|true|none|none|
 
-<h2 id="tocS_PostClienteRequest">PostClienteRequest</h2>
+<h2 id="tocS_PostCustomerRequest">PostCustomerRequest</h2>
 <!-- backwards compatibility -->
-<a id="schemapostclienterequest"></a>
-<a id="schema_PostClienteRequest"></a>
-<a id="tocSpostclienterequest"></a>
-<a id="tocspostclienterequest"></a>
+<a id="schemapostcustomerrequest"></a>
+<a id="schema_PostCustomerRequest"></a>
+<a id="tocSpostcustomerrequest"></a>
+<a id="tocspostcustomerrequest"></a>
 
 ```json
 {
@@ -783,7 +838,7 @@ PostClienteErrorValidationRequest
 
 ```
 
-PostClienteRequest
+PostCustomerRequest
 
 ### Properties
 
@@ -791,12 +846,12 @@ PostClienteRequest
 |---|---|---|---|---|
 |nome|string|true|none|none|
 
-<h2 id="tocS_PostCartaoRequest">PostCartaoRequest</h2>
+<h2 id="tocS_PostCardRequest">PostCardRequest</h2>
 <!-- backwards compatibility -->
-<a id="schemapostcartaorequest"></a>
-<a id="schema_PostCartaoRequest"></a>
-<a id="tocSpostcartaorequest"></a>
-<a id="tocspostcartaorequest"></a>
+<a id="schemapostcardrequest"></a>
+<a id="schema_PostCardRequest"></a>
+<a id="tocSpostcardrequest"></a>
+<a id="tocspostcardrequest"></a>
 
 ```json
 {
@@ -806,7 +861,7 @@ PostClienteRequest
 
 ```
 
-PostCartaoRequest
+PostCardRequest
 
 ### Properties
 
@@ -815,12 +870,12 @@ PostCartaoRequest
 |numero|string|true|none|none|
 |clienteId|integer(int32)|true|none|none|
 
-<h2 id="tocS_PostCartaoErrorDuplicadoRequest">PostCartaoErrorDuplicadoRequest</h2>
+<h2 id="tocS_PostCardDuplicatedErrorRequest">PostCardDuplicatedErrorRequest</h2>
 <!-- backwards compatibility -->
-<a id="schemapostcartaoerrorduplicadorequest"></a>
-<a id="schema_PostCartaoErrorDuplicadoRequest"></a>
-<a id="tocSpostcartaoerrorduplicadorequest"></a>
-<a id="tocspostcartaoerrorduplicadorequest"></a>
+<a id="schemapostcardduplicatederrorrequest"></a>
+<a id="schema_PostCardDuplicatedErrorRequest"></a>
+<a id="tocSpostcardduplicatederrorrequest"></a>
+<a id="tocspostcardduplicatederrorrequest"></a>
 
 ```json
 {
@@ -830,7 +885,7 @@ PostCartaoRequest
 
 ```
 
-PostCartaoErrorDuplicadoRequest
+PostCardDuplicatedErrorRequest
 
 ### Properties
 
@@ -839,12 +894,12 @@ PostCartaoErrorDuplicadoRequest
 |numero|string|true|none|none|
 |clienteId|integer(int32)|true|none|none|
 
-<h2 id="tocS_PostPagamentoFalhaDesativadoRequest">PostPagamentoFalhaDesativadoRequest</h2>
+<h2 id="tocS_PostPaymentDeactivatedErrorRequest">PostPaymentDeactivatedErrorRequest</h2>
 <!-- backwards compatibility -->
-<a id="schemapostpagamentofalhadesativadorequest"></a>
-<a id="schema_PostPagamentoFalhaDesativadoRequest"></a>
-<a id="tocSpostpagamentofalhadesativadorequest"></a>
-<a id="tocspostpagamentofalhadesativadorequest"></a>
+<a id="schemapostpaymentdeactivatederrorrequest"></a>
+<a id="schema_PostPaymentDeactivatedErrorRequest"></a>
+<a id="tocSpostpaymentdeactivatederrorrequest"></a>
+<a id="tocspostpaymentdeactivatederrorrequest"></a>
 
 ```json
 {
@@ -855,7 +910,7 @@ PostCartaoErrorDuplicadoRequest
 
 ```
 
-PostPagamentoFalhaDesativadoRequest
+PostPaymentDeactivatedErrorRequest
 
 ### Properties
 
@@ -865,12 +920,12 @@ PostPagamentoFalhaDesativadoRequest
 |descricao|string|true|none|none|
 |valor|number|true|none|none|
 
-<h2 id="tocS_PatchAtivaCartaoRequest">PatchAtivaCartaoRequest</h2>
+<h2 id="tocS_PatchCardActivationRequest">PatchCardActivationRequest</h2>
 <!-- backwards compatibility -->
-<a id="schemapatchativacartaorequest"></a>
-<a id="schema_PatchAtivaCartaoRequest"></a>
-<a id="tocSpatchativacartaorequest"></a>
-<a id="tocspatchativacartaorequest"></a>
+<a id="schemapatchcardactivationrequest"></a>
+<a id="schema_PatchCardActivationRequest"></a>
+<a id="tocSpatchcardactivationrequest"></a>
+<a id="tocspatchcardactivationrequest"></a>
 
 ```json
 {
@@ -879,7 +934,7 @@ PostPagamentoFalhaDesativadoRequest
 
 ```
 
-PatchAtivaCartaoRequest
+PatchCardActivationRequest
 
 ### Properties
 
@@ -887,12 +942,12 @@ PatchAtivaCartaoRequest
 |---|---|---|---|---|
 |ativo|boolean|true|none|none|
 
-<h2 id="tocS_PostPagamentoWrongValidationsRequest">PostPagamentoWrongValidationsRequest</h2>
+<h2 id="tocS_PostPaymentWrongValidationsRequest">PostPaymentWrongValidationsRequest</h2>
 <!-- backwards compatibility -->
-<a id="schemapostpagamentowrongvalidationsrequest"></a>
-<a id="schema_PostPagamentoWrongValidationsRequest"></a>
-<a id="tocSpostpagamentowrongvalidationsrequest"></a>
-<a id="tocspostpagamentowrongvalidationsrequest"></a>
+<a id="schemapostpaymentwrongvalidationsrequest"></a>
+<a id="schema_PostPaymentWrongValidationsRequest"></a>
+<a id="tocSpostpaymentwrongvalidationsrequest"></a>
+<a id="tocspostpaymentwrongvalidationsrequest"></a>
 
 ```json
 {
@@ -903,7 +958,7 @@ PatchAtivaCartaoRequest
 
 ```
 
-PostPagamentoWrongValidationsRequest
+PostPaymentWrongValidationsRequest
 
 ### Properties
 
@@ -913,12 +968,12 @@ PostPagamentoWrongValidationsRequest
 |descricao|string|true|none|none|
 |valor|integer(int32)|true|none|none|
 
-<h2 id="tocS_PostPagamentoCardNotExistsRequest">PostPagamentoCardNotExistsRequest</h2>
+<h2 id="tocS_PostPaymentCardNotExistsRequest">PostPaymentCardNotExistsRequest</h2>
 <!-- backwards compatibility -->
-<a id="schemapostpagamentocardnotexistsrequest"></a>
-<a id="schema_PostPagamentoCardNotExistsRequest"></a>
-<a id="tocSpostpagamentocardnotexistsrequest"></a>
-<a id="tocspostpagamentocardnotexistsrequest"></a>
+<a id="schemapostpaymentcardnotexistsrequest"></a>
+<a id="schema_PostPaymentCardNotExistsRequest"></a>
+<a id="tocSpostpaymentcardnotexistsrequest"></a>
+<a id="tocspostpaymentcardnotexistsrequest"></a>
 
 ```json
 {
@@ -929,7 +984,7 @@ PostPagamentoWrongValidationsRequest
 
 ```
 
-PostPagamentoCardNotExistsRequest
+PostPaymentCardNotExistsRequest
 
 ### Properties
 
@@ -939,12 +994,12 @@ PostPagamentoCardNotExistsRequest
 |descricao|string|true|none|none|
 |valor|number|true|none|none|
 
-<h2 id="tocS_PostPagamentoRequest">PostPagamentoRequest</h2>
+<h2 id="tocS_PostPaymentRequest">PostPaymentRequest</h2>
 <!-- backwards compatibility -->
-<a id="schemapostpagamentorequest"></a>
-<a id="schema_PostPagamentoRequest"></a>
-<a id="tocSpostpagamentorequest"></a>
-<a id="tocspostpagamentorequest"></a>
+<a id="schemapostpaymentrequest"></a>
+<a id="schema_PostPaymentRequest"></a>
+<a id="tocSpostpaymentrequest"></a>
+<a id="tocspostpaymentrequest"></a>
 
 ```json
 {
@@ -955,7 +1010,7 @@ PostPagamentoCardNotExistsRequest
 
 ```
 
-PostPagamentoRequest
+PostPaymentRequest
 
 ### Properties
 
@@ -965,12 +1020,12 @@ PostPagamentoRequest
 |descricao|string|true|none|none|
 |valor|number|true|none|none|
 
-<h2 id="tocS_PostPagamentoFalhaExpiradoRequest">PostPagamentoFalhaExpiradoRequest</h2>
+<h2 id="tocS_PostPaymentExpiredErrorRequest">PostPaymentExpiredErrorRequest</h2>
 <!-- backwards compatibility -->
-<a id="schemapostpagamentofalhaexpiradorequest"></a>
-<a id="schema_PostPagamentoFalhaExpiradoRequest"></a>
-<a id="tocSpostpagamentofalhaexpiradorequest"></a>
-<a id="tocspostpagamentofalhaexpiradorequest"></a>
+<a id="schemapostpaymentexpirederrorrequest"></a>
+<a id="schema_PostPaymentExpiredErrorRequest"></a>
+<a id="tocSpostpaymentexpirederrorrequest"></a>
+<a id="tocspostpaymentexpirederrorrequest"></a>
 
 ```json
 {
@@ -981,7 +1036,7 @@ PostPagamentoRequest
 
 ```
 
-PostPagamentoFalhaExpiradoRequest
+PostPaymentExpiredErrorRequest
 
 ### Properties
 
