@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Get All Clientes",
+			"name": "Get All Customers",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -21,12 +21,13 @@
 					"path": [
 						"cliente"
 					]
-				}
+				},
+				"description": "Request para obter todos os clientes."
 			},
 			"response": []
 		},
 		{
-			"name": "Post Cliente Error Validation",
+			"name": "Post Customer Wrong Validation",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -49,12 +50,13 @@
 					"path": [
 						"cliente"
 					]
-				}
+				},
+				"description": "Request para criar um novo cliente, deve dar erro de validação do campo."
 			},
 			"response": []
 		},
 		{
-			"name": "Post Cliente",
+			"name": "Post Customer",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -77,12 +79,13 @@
 					"path": [
 						"cliente"
 					]
-				}
+				},
+				"description": "Adiciona um novo cliente."
 			},
 			"response": []
 		},
 		{
-			"name": "Get Cliente por ID Wrong Validation",
+			"name": "Get Customer by id Wrong Validation",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -97,12 +100,13 @@
 						"cliente",
 						"X"
 					]
-				}
+				},
+				"description": "Request para obter um cliente pelo id, deve dar erro de validação do campo."
 			},
 			"response": []
 		},
 		{
-			"name": "Get Cliente por ID Not Exists",
+			"name": "Get Customer by id Not Exists",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -117,12 +121,13 @@
 						"cliente",
 						"123456789"
 					]
-				}
+				},
+				"description": "Request para obter um cliente que não existe. Deve retornar mensagem informativa."
 			},
 			"response": []
 		},
 		{
-			"name": "Get Cliente por ID",
+			"name": "Get Customer by id",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -137,12 +142,13 @@
 						"cliente",
 						"3"
 					]
-				}
+				},
+				"description": "Request para obter um cliente por id."
 			},
 			"response": []
 		},
 		{
-			"name": "Get All Cartoes",
+			"name": "Get All Cards",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -156,12 +162,13 @@
 					"path": [
 						"cartao"
 					]
-				}
+				},
+				"description": "Request para obter todos os cartões cadastrados."
 			},
 			"response": []
 		},
 		{
-			"name": "Get Cartão By Id Wrong Validation",
+			"name": "Get Card by id  Wrong Validation",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -177,12 +184,13 @@
 						"id",
 						"X"
 					]
-				}
+				},
+				"description": "Request para obter o cartão pelo id. Deve retornar erro de validação do campo."
 			},
 			"response": []
 		},
 		{
-			"name": "Get Cartão By Id Not Exists",
+			"name": "Get Card by id Not Exists",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -198,12 +206,13 @@
 						"id",
 						"123456"
 					]
-				}
+				},
+				"description": "Request para obter o cartão pelo id. Deve retornar que o cartão não existe."
 			},
 			"response": []
 		},
 		{
-			"name": "Get Cartão By Id",
+			"name": "Get Card by id",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -219,12 +228,13 @@
 						"id",
 						"1"
 					]
-				}
+				},
+				"description": "Request para obter o cartão pelo id."
 			},
 			"response": []
 		},
 		{
-			"name": "Post Cartao",
+			"name": "Post Card",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -247,12 +257,13 @@
 					"path": [
 						"cartao"
 					]
-				}
+				},
+				"description": "Request para criar um novo cartão associado a um cliente que existe."
 			},
 			"response": []
 		},
 		{
-			"name": "Get Cartão By Id Created",
+			"name": "Get Card by id Created",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -268,12 +279,13 @@
 						"id",
 						"3"
 					]
-				}
+				},
+				"description": "Request para obter o cartão pelo id recém criado."
 			},
 			"response": []
 		},
 		{
-			"name": "Post Cartao Error Duplicado",
+			"name": "Post Card Duplicated Error",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -296,12 +308,13 @@
 					"path": [
 						"cartao"
 					]
-				}
+				},
+				"description": "Request para criar um cartão com o mesmo número que foi criado anteriormente. Deve retornar erro informando que o cartão já foi cadastrado."
 			},
 			"response": []
 		},
 		{
-			"name": "Post Pagamento Falha Desativado",
+			"name": "Post Payment Deactivated Error",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -324,12 +337,13 @@
 					"path": [
 						"pagamento"
 					]
-				}
+				},
+				"description": "Request para criar um pagamento no cartão. Deve retornar informando que o cartão está desativado."
 			},
 			"response": []
 		},
 		{
-			"name": "Patch Ativa Cartao",
+			"name": "Patch Card Activation",
 			"request": {
 				"method": "PATCH",
 				"header": [],
@@ -353,12 +367,13 @@
 						"cartao",
 						"112358132134"
 					]
-				}
+				},
+				"description": "Request para ativar um cartão."
 			},
 			"response": []
 		},
 		{
-			"name": "Get Cartao By Numero Not Exists",
+			"name": "Get Card by number Not Exists",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -373,12 +388,13 @@
 						"cartao",
 						"123456789101212"
 					]
-				}
+				},
+				"description": "Request para obter um cartão pelo número. Deve retornar informando que o cartão não existe."
 			},
 			"response": []
 		},
 		{
-			"name": "Get Cartao By Numero",
+			"name": "Get Card by number",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -393,12 +409,13 @@
 						"cartao",
 						"112358132134"
 					]
-				}
+				},
+				"description": "Request para obter um cartão pelo número."
 			},
 			"response": []
 		},
 		{
-			"name": "Post Pagamento Wrong Validations",
+			"name": "Post Payment Wrong Validations",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -421,12 +438,13 @@
 					"path": [
 						"pagamento"
 					]
-				}
+				},
+				"description": "Request para inserir um pagamento. Deve retornar uma lista de erros de validação."
 			},
 			"response": []
 		},
 		{
-			"name": "Post Pagamento Card Not Exists",
+			"name": "Post Payment Card Not Exists",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -449,12 +467,13 @@
 					"path": [
 						"pagamento"
 					]
-				}
+				},
+				"description": "Request para criar um pagamento. Deve retornar que o cartão não existe."
 			},
 			"response": []
 		},
 		{
-			"name": "Post Pagamento",
+			"name": "Post Payment",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -477,12 +496,13 @@
 					"path": [
 						"pagamento"
 					]
-				}
+				},
+				"description": "Request para criar um pagamento. "
 			},
 			"response": []
 		},
 		{
-			"name": "Get Fatura Wrong Validation",
+			"name": "Get Invoice  Wrong Validation",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -498,12 +518,13 @@
 						"X",
 						"3"
 					]
-				}
+				},
+				"description": "Request para obter a fatura. Deve retornar erro de validação do campo."
 			},
 			"response": []
 		},
 		{
-			"name": "Get Fatura Cliente Not Exists",
+			"name": "Get Invoice Customer Not Exists",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -519,12 +540,13 @@
 						"123456",
 						"3"
 					]
-				}
+				},
+				"description": "Request para obter a fatura. Deve retornar que o cliente não existe."
 			},
 			"response": []
 		},
 		{
-			"name": "Get Fatura Cartao Not Exists",
+			"name": "Get Invoice Card Not Exists",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -540,12 +562,13 @@
 						"3",
 						"123456"
 					]
-				}
+				},
+				"description": "Request para obter a fatura. Deve retornar que o cartão não existe."
 			},
 			"response": []
 		},
 		{
-			"name": "Get Fatura",
+			"name": "Get Invoice",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -561,12 +584,13 @@
 						"3",
 						"3"
 					]
-				}
+				},
+				"description": "Request para obter a fatura."
 			},
 			"response": []
 		},
 		{
-			"name": "Pagar Fatura Wrong Validation",
+			"name": "Post Pay Invoice Wrong Validation",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -583,12 +607,13 @@
 						"3",
 						"pagar"
 					]
-				}
+				},
+				"description": "Request para pagar a fatura. Deve retornar erro de validação do campo."
 			},
 			"response": []
 		},
 		{
-			"name": "Pagar Fatura Cliente Not Exists",
+			"name": "Post Pay Invoice Customer Not Exists",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -605,12 +630,13 @@
 						"3",
 						"pagar"
 					]
-				}
+				},
+				"description": "Request para pagar a fatura. Deve retornar informando que o cliente não existe."
 			},
 			"response": []
 		},
 		{
-			"name": "Pagar Fatura Cartao Not Exists",
+			"name": "Post Pay Invoice Card Not Exists",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -627,12 +653,13 @@
 						"123456",
 						"pagar"
 					]
-				}
+				},
+				"description": "Request para pagar a fatura. Deve retornar informando que o cartão não existe."
 			},
 			"response": []
 		},
 		{
-			"name": "Pagar Fatura",
+			"name": "Post Pay Invoice",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -649,12 +676,13 @@
 						"3",
 						"pagar"
 					]
-				}
+				},
+				"description": "Request para pagar a fatura."
 			},
 			"response": []
 		},
 		{
-			"name": "Expirar Cartao Wrong Validation",
+			"name": "Post Expire Card Wrong Validation",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -671,12 +699,13 @@
 						"3",
 						"expirar"
 					]
-				}
+				},
+				"description": "Request para expirar o cartão do cliente. Deve retornar erro de validação do campo."
 			},
 			"response": []
 		},
 		{
-			"name": "Expirar Cartao Cliente Not Exists",
+			"name": "Post Expire Card Customer Not Exists",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -693,12 +722,13 @@
 						"3",
 						"expirar"
 					]
-				}
+				},
+				"description": "Request para expirar o cartão do cliente. Deve retornar que o cliente não existe."
 			},
 			"response": []
 		},
 		{
-			"name": "Expirar Cartao Cartao Not Exists",
+			"name": "Post Expire Card Not Exists",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -715,12 +745,13 @@
 						"123456",
 						"expirar"
 					]
-				}
+				},
+				"description": "Request para expirar o cartão do cliente. Deve retornar que o cartão não existe."
 			},
 			"response": []
 		},
 		{
-			"name": "Expirar Cartao",
+			"name": "Post Expire Card",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -737,12 +768,13 @@
 						"3",
 						"expirar"
 					]
-				}
+				},
+				"description": "Request para expirar o cartão do cliente."
 			},
 			"response": []
 		},
 		{
-			"name": "Post Pagamento Falha Expirado",
+			"name": "Post Payment Expired Error",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -765,7 +797,8 @@
 					"path": [
 						"pagamento"
 					]
-				}
+				},
+				"description": "Request para criar um pagamento. Deve retornar informando que o cartão está expirado."
 			},
 			"response": []
 		}
