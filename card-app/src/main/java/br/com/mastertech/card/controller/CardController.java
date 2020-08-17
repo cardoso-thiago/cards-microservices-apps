@@ -88,13 +88,13 @@ public class CardController {
 
     @PostMapping("/{cliente-id}/{cartao-id}/expirar")
     public ResponseEntity expireCard(@Valid
-                              @NotNull(message = "O id do cliente não pode ser nulo.")
-                              @Min(value = 1, message = "O id do cliente deve ser um número positivo.")
-                              @PathVariable("cliente-id") Long customerId,
-                              @Valid
-                              @NotNull(message = "O id do cartão não pode ser nulo.")
-                              @Min(value = 1, message = "O id do cartão deve ser um número positivo.")
-                              @PathVariable("cartao-id") Long cardId) throws CardNotFoundException {
+                                     @NotNull(message = "O id do cliente não pode ser nulo.")
+                                     @Min(value = 1, message = "O id do cliente deve ser um número positivo.")
+                                     @PathVariable("cliente-id") Long customerId,
+                                     @Valid
+                                     @NotNull(message = "O id do cartão não pode ser nulo.")
+                                     @Min(value = 1, message = "O id do cartão deve ser um número positivo.")
+                                     @PathVariable("cartao-id") Long cardId) throws CardNotFoundException {
         Card card = cardService.expireCard(customerId, cardId);
         return ResponseEntity.ok().body(DataMapper.INSTANCE.cardToCardInfoResponse(card));
     }

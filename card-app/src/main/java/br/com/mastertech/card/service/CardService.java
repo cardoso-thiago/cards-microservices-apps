@@ -32,7 +32,7 @@ public class CardService {
     }
 
     public Card save(Long customerId, Card card) throws CardAlreadyExistsException {
-        if(cardRepository.findByNumber(card.getNumber()).isPresent()){
+        if (cardRepository.findByNumber(card.getNumber()).isPresent()) {
             throw new CardAlreadyExistsException(MessageFormat.format("O cartão {0} já foi cadastrado.", card.getNumber()));
         }
         Customer customer = customerClient.getCustomer(customerId);

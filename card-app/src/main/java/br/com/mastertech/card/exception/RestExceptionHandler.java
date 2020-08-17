@@ -59,7 +59,7 @@ public class RestExceptionHandler {
         return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(createErrorBody(e.getCause().getMessage()));
     }
 
-    @ExceptionHandler(value = {FeignException.class})
+    @ExceptionHandler(value = {FeignException.FeignClientException.class, FeignException.FeignServerException.class})
     protected ResponseEntity<Object> handleFeignException(FeignException e) {
         return ResponseEntity.status(e.status()).body(getFeignError(e));
     }
@@ -67,7 +67,7 @@ public class RestExceptionHandler {
     private String getFeignError(FeignException e) {
         String error = e.getLocalizedMessage();
         Optional<ByteBuffer> body = e.responseBody();
-        if(body.isPresent()) {
+        if (body.isPresent()) {
             error = StandardCharsets.UTF_8.decode(body.get()).toString();
         }
         return error;

@@ -1,5 +1,6 @@
 package br.com.mastertech.invoice.client;
 
+import br.com.mastertech.invoice.config.ResilienceConfiguration;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +11,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-@FeignClient(name = "PAYMENT")
+@FeignClient(name = "PAYMENT", configuration = ResilienceConfiguration.class)
 public interface PaymentClient {
 
     @DeleteMapping("/pagamentos/{id_cartao}")
