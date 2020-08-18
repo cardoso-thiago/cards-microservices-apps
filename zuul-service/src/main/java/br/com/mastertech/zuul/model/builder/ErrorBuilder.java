@@ -1,12 +1,11 @@
-package br.com.mastertech.card.model.builder;
+package br.com.mastertech.zuul.model.builder;
 
-import br.com.mastertech.card.model.Error;
+import br.com.mastertech.zuul.model.Error;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 public final class ErrorBuilder {
-    private List<String> messages;
+    private String message;
     private LocalDateTime timestamp;
 
     private ErrorBuilder() {
@@ -16,8 +15,8 @@ public final class ErrorBuilder {
         return new ErrorBuilder();
     }
 
-    public ErrorBuilder messages(List<String> messages) {
-        this.messages = messages;
+    public ErrorBuilder message(String message) {
+        this.message = message;
         return this;
     }
 
@@ -27,6 +26,6 @@ public final class ErrorBuilder {
     }
 
     public Error build() {
-        return new Error(messages, timestamp);
+        return new Error(message, timestamp);
     }
 }
