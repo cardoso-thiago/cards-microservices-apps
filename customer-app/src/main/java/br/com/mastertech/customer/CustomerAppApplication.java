@@ -7,7 +7,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.ribbon.RibbonClients;
 
 @SpringBootApplication
-@EnableEurekaClient
 @RibbonClients(defaultConfiguration = RibbonConfiguration.class)
 public class CustomerAppApplication {
     public static void main(String[] args) {
