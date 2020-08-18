@@ -9,7 +9,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-@FeignClient(name = "CARD", configuration = ResilienceConfiguration.class)
+@FeignClient(name = "ZUUL", configuration = ResilienceConfiguration.class)
 public interface CardClient {
     @GetMapping("/cartao/id/{id}")
     Card getCardById(

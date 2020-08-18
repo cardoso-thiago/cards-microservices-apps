@@ -9,7 +9,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-@FeignClient(name = "CUSTOMER", configuration = ResilienceConfiguration.class)
+@FeignClient(name = "ZUUL", configuration = ResilienceConfiguration.class)
 public interface CustomerClient {
     @GetMapping("/cliente/{id}")
     Customer getCustomer(@Valid

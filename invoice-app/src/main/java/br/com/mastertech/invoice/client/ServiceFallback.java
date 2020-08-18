@@ -5,7 +5,7 @@ import br.com.mastertech.invoice.exception.PaymentServiceDownException;
 
 import java.util.List;
 
-public class ServiceFallback implements CardClient, PaymentClient {
+public class ServiceFallback implements ZuulClient {
     @Override
     public Card getCardById(Long cardId) {
         throw new CardServiceDownException();
