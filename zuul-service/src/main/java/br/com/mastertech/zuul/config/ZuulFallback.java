@@ -1,7 +1,7 @@
 package br.com.mastertech.zuul.config;
 
-import br.com.mastertech.zuul.model.Error;
-import br.com.mastertech.zuul.model.builder.ErrorBuilder;
+import br.com.mastertech.zuul.model.ZuulError;
+import br.com.mastertech.zuul.model.builder.ZuulErrorBuilder;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -32,9 +32,9 @@ public class ZuulFallback implements FallbackProvider {
         mapper.registerModule(new JavaTimeModule());
         mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
 
-        Error error = ErrorBuilder.anError().message(message).timestamp(LocalDateTime.now()).build();
+        ZuulError zuulError = ZuulErrorBuilder.aZuulError().message(message).timestamp(LocalDateTime.now()).build();
         try {
-            return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(error);
+            return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(zuulError);
         } catch (JsonProcessingException e) {
             return message;
         }

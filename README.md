@@ -379,13 +379,13 @@ Request para criar um pagamento no cart√£o. Deve retornar informando que o cart√
 }
 ```
 
-<h3 id="post-payment-deactivated-error-parameters">Parameters</h3>
+<h3 id="post-payment-deactivated-zuulError-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[PostPaymentDeactivatedErrorRequest](#schemapostpaymentdeactivatederrorrequest)|true|none|
 
-<h3 id="post-payment-deactivated-error-responses">Responses</h3>
+<h3 id="post-payment-deactivated-zuulError-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|

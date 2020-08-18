@@ -5,11 +5,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.time.LocalDateTime;
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public class Error {
+public class ZuulError {
     private String message;
     private LocalDateTime timestamp;
 
-    public Error(String message, LocalDateTime timestamp) {
+    public ZuulError(String message, LocalDateTime timestamp) {
         this.message = message;
         this.timestamp = timestamp;
     }
