@@ -1,5 +1,6 @@
 package br.com.mastertech.card.client;
 
+import br.com.mastertech.card.config.OAuthRequestInterceptor;
 import br.com.mastertech.card.config.ResilienceConfiguration;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +10,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-@FeignClient(name = "ZUUL", configuration = ResilienceConfiguration.class)
+@FeignClient(name = "ZUUL", configuration = {ResilienceConfiguration.class, OAuthRequestInterceptor.class})
 public interface CustomerClient {
     @GetMapping("/cliente/{id}")
     Customer getCustomer(@Valid

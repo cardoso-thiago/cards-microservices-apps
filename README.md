@@ -1,10 +1,9 @@
 <!-- Generator: Widdershins v4.0.1 -->
 
-<h1 id="mastertech">Mastertech v1.0</h1>
-
+<h1 id="mastertech-sistema-cart-es-oauth">Mastertech Sistema Cartões OAuth v1.0</h1>
 
 # Introdução
-API para o sistema de cartões
+API para o sistema de cartões com autenticação OAuth
 
 # Overview
 Sistema de testes criado no curso da Mastertech
@@ -19,7 +18,11 @@ Base URLs:
 
 * <a href="http://localhost:8083/fatura">http://localhost:8083/fatura</a>
 
-<h1 id="mastertech-misc">Misc</h1>
+# Authentication
+
+- HTTP Authentication, scheme: bearer 
+
+<h1 id="mastertech-sistema-cart-es-oauth-misc">Misc</h1>
 
 ## Get All Customers
 
@@ -43,8 +46,9 @@ Request para obter todos os clientes.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Post Customer Wrong Validation
@@ -84,8 +88,9 @@ Request para criar um novo cliente, deve dar erro de validação do campo.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Get Customer by id Wrong Validation
@@ -110,8 +115,9 @@ Request para obter um cliente pelo id, deve dar erro de validação do campo.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Get Customer by id Not Exists
@@ -136,8 +142,9 @@ Request para obter um cliente que não existe. Deve retornar mensagem informativ
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Get Customer by id
@@ -162,8 +169,9 @@ Request para obter um cliente por id.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Get All Cards
@@ -188,8 +196,9 @@ Request para obter todos os cartões cadastrados.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Post Card
@@ -230,8 +239,9 @@ Request para criar um novo cartão associado a um cliente que existe.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Get Card by id  Wrong Validation
@@ -256,8 +266,9 @@ Request para obter o cartão pelo id. Deve retornar erro de validação do campo
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Get Card by id Not Exists
@@ -282,8 +293,9 @@ Request para obter o cartão pelo id. Deve retornar que o cartão não existe.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Get Card by id
@@ -308,8 +320,9 @@ Request para obter o cartão pelo id.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Get Card by id Created
@@ -334,8 +347,9 @@ Request para obter o cartão pelo id recém criado.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Post Payment Deactivated Error
@@ -365,20 +379,21 @@ Request para criar um pagamento no cartão. Deve retornar informando que o cart�
 }
 ```
 
-<h3 id="post-payment-deactivated-zuulError-parameters">Parameters</h3>
+<h3 id="post-payment-deactivated-error-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[PostPaymentDeactivatedErrorRequest](#schemapostpaymentdeactivatederrorrequest)|true|none|
 
-<h3 id="post-payment-deactivated-zuulError-responses">Responses</h3>
+<h3 id="post-payment-deactivated-error-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Patch Card Activation
@@ -418,8 +433,9 @@ Request para ativar um cartão.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Get Card by number
@@ -444,8 +460,9 @@ Request para obter um cartão pelo número.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Get Card by number Not Exists
@@ -470,8 +487,9 @@ Request para obter um cartão pelo número. Deve retornar informando que o cart�
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Get Invoice  Wrong Validation
@@ -496,8 +514,9 @@ Request para obter a fatura. Deve retornar erro de validação do campo.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Get Invoice Customer Not Exists
@@ -522,8 +541,9 @@ Request para obter a fatura. Deve retornar que o cliente não existe.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Get Invoice Card Not Exists
@@ -548,8 +568,9 @@ Request para obter a fatura. Deve retornar que o cartão não existe.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Get Invoice
@@ -574,8 +595,9 @@ Request para obter a fatura.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Post Pay Invoice Wrong Validation
@@ -600,8 +622,9 @@ Request para pagar a fatura. Deve retornar erro de validação do campo.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Post Pay Invoice Customer Not Exists
@@ -626,8 +649,9 @@ Request para pagar a fatura. Deve retornar informando que o cliente não existe.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Post Pay Invoice Card Not Exists
@@ -652,8 +676,9 @@ Request para pagar a fatura. Deve retornar informando que o cartão não existe.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Post Pay Invoice
@@ -678,8 +703,9 @@ Request para pagar a fatura.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Post Expire Card Wrong Validation
@@ -704,8 +730,9 @@ Request para expirar o cartão do cliente. Deve retornar erro de validação do 
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Post Expire Card Customer Not Exists
@@ -730,8 +757,9 @@ Request para expirar o cartão do cliente. Deve retornar que o cliente não exis
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Post Expire Card Not Exists
@@ -756,8 +784,9 @@ Request para expirar o cartão do cliente. Deve retornar que o cartão não exis
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 ## Post Expire Card
@@ -782,8 +811,9 @@ Request para expirar o cartão do cliente.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+httpBearer
 </aside>
 
 # Schemas

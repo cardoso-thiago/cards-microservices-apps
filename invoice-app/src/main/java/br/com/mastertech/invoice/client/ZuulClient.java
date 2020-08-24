@@ -1,5 +1,6 @@
 package br.com.mastertech.invoice.client;
 
+import br.com.mastertech.invoice.config.OAuthRequestInterceptor;
 import br.com.mastertech.invoice.config.ResilienceConfiguration;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,7 +14,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-@FeignClient(name = "ZUUL", configuration = ResilienceConfiguration.class)
+@FeignClient(name = "ZUUL", configuration = {ResilienceConfiguration.class, OAuthRequestInterceptor.class})
 public interface ZuulClient {
     @GetMapping("/cartao/id/{id}")
     Card getCardById(
